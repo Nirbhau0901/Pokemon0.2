@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Game.h"
 #include "Utility.h"
+#include "grass.h"
 //#include "WildEncounterManager.h"
 
 #include <iostream>
@@ -79,5 +80,8 @@ void Game::gameLoop(Player& player)
         Utility::waitForEnter();
 
         cout << "Goodbye " << player.name << "! Thanks for playing!" << endl;
+
+        // Grass patch where wild pokemon live
+        Grass forestGrass = { "Forest", {{"Pidgey", PokemonType::NORMAL,40}, {"Caterpie", PokemonType::BUG,35},{"Zubat",PokemonType::POISION,30}}, 80 };
     }
 }
