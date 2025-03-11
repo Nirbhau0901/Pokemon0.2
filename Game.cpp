@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "Utility.h"
 #include "grass.h"
-//#include "WildEncounterManager.h"
+#include "WildEncounterManager.h"
 
 #include <iostream>
 
@@ -11,7 +11,8 @@ using namespace std;
 
 Game::Game()
 {
-
+    // sample grass environment with actual pokemon object
+    forestGrass ={ "Forest", {{"Pidgey", PokemonType::NORMAL,40}, {"Caterpie", PokemonType::BUG,35},{"Zubat",PokemonType::POISION,30}}, 80 };
 }
 
 void Game::gameLoop(Player& player)
@@ -42,8 +43,13 @@ void Game::gameLoop(Player& player)
         switch (choice)
         {
         case 1:
-            cout << "You look around... but all the wild Pokemon are on a Vacation. Maybe try again later?" << endl;
+        { //created a scope within case 1
+            WildEncounterManager encounterManager;
+            Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+
+            cout << "A Wild " << encounteredPokemon.name << " Has Appeared!!" << endl;
             break;
+        }
 
         case 2:
             cout << "You head to the PokeCenter, but Nurse Joy is out on a Coffee break. Guess your Pokemon will have to tough it out now" << endl;
@@ -81,7 +87,6 @@ void Game::gameLoop(Player& player)
 
         cout << "Goodbye " << player.name << "! Thanks for playing!" << endl;
 
-        // Grass patch where wild pokemon live
-        Grass forestGrass = { "Forest", {{"Pidgey", PokemonType::NORMAL,40}, {"Caterpie", PokemonType::BUG,35},{"Zubat",PokemonType::POISION,30}}, 80 };
+        
     }
 }
