@@ -1,3 +1,4 @@
+#pragma once
 //Utility.h
 class Utility
 {

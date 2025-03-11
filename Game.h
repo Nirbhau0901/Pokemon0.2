@@ -1,3 +1,4 @@
+#pragma once
 // Game.hpp
 #include "Grass.h"
 
