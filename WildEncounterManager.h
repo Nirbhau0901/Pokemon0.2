@@ -5,6 +5,7 @@
 class WildEncounterManager
 {
 public:
-	WildPokemon getRandomPokemonFromGrass(const Grass& grass);
-};
+	Pokemon getRandomPokemonFromGrass(const Grass& grass);
 
+  WildEncounterManager(); // constructor will be same name as the class with no return type 
+};
