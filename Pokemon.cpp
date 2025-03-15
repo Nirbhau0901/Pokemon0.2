@@ -6,6 +6,8 @@
 
 using namespace std;
 
+int Pokemon::maxHealth = 100;
+
 //default constructor
 Pokemon::Pokemon() : name("Unknown"), type(PokemonType::NORMAL), health(50) {}
 
@@ -21,7 +23,24 @@ Pokemon::~Pokemon()
 	cout << name << " has been released." << endl; //destructor logic goes here
 }
 
-void Pokemon::attack()
+void Pokemon::attack(Pokemon &WildPokemon)
 {
-	cout << name << " attacks with a powerful move!" << endl;
+	int damage = 10;
+	cout << name << " attacks " << WildPokemon.name << " for " << damage << " damage " << endl;
+	WildPokemon.TakeDamage(damage);
+}
+
+void Pokemon::TakeDamage(int damage)
+{
+	health = health - damage;
+
+	if (health < 0)
+	{
+		health = 0;
+	}
+}
+
+bool Pokemon::isFainted()const
+{
+	return health <= 0;
 }

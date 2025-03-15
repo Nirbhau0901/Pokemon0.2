@@ -11,7 +11,8 @@ class Pokemon
 public:
 	string name;
 	PokemonType type;
-	int health;
+	int health; 
+	static int maxHealth;
 
 	//default constructor
 	Pokemon();
@@ -25,5 +26,9 @@ public:
 	//Destructor
 	~Pokemon();
 
-	void attack(); //method for pokemon attack
+	void attack(Pokemon &WildPokemon); //method for pokemon attack
+
+	void TakeDamage(int damage); // method to recive damage and reduce pokemon health
+
+	bool isFainted() const; // method to check if pokemon has fainted 
 };
