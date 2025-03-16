@@ -9,26 +9,26 @@ using namespace std;
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {
 	cout << "A wild " << wildPokemon.name << " has appeared!" << endl; // wild pokemon appears
-	battle(player.chosenPokemon, wildPokemon); // calling method for actual battle 
+	battle(player, wildPokemon); // calling method for actual battle 
 }
 
-void BattleManager::battle(Pokemon& playerPokemon, Pokemon& WildPokemon)
+void BattleManager::battle(Player& playerPokemon, Pokemon& WildPokemon)
 {
 	
 
-	while (!playerPokemon.isFainted() && !WildPokemon.isFainted())
+	while (!playerPokemon.chosenPokemon.isFainted() && !WildPokemon.isFainted())
 	{
-		playerPokemon.attack(WildPokemon); // player attacking the wild poekmon
+		playerPokemon.chosenPokemon.attack(WildPokemon); // player attacking the wild poekmon
 
 		if (!WildPokemon.isFainted()) // check if wild Pokemon has fainted
 		{
-			WildPokemon.attack(playerPokemon); // wild pokemon attacking player pokemon
+			WildPokemon.attack(playerPokemon.chosenPokemon); // wild pokemon attacking player pokemon
 		}
 	}
 
 	Utility::waitForEnter(); // pause to show result of each cycle/loop 
 
-	HandleBattleOutcome(player, playerPokemon.isFainted()); // calling method to handle the result of battle 
+	HandleBattleOutcome(playerPokemon, playerPokemon.chosenPokemon.isFainted()); // calling method to handle the result of battle 
 }
 
 void BattleManager::HandleBattleOutcome(Player&player, bool playerWon)
