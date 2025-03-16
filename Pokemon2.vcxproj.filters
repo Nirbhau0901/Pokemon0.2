@@ -72,5 +72,8 @@
     <ClInclude Include="WildEncounterManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

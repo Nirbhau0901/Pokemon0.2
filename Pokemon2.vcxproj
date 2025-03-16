@@ -141,6 +141,7 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="grass.h" />
     <ClInclude Include="Player.h" />
