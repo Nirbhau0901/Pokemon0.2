@@ -12,7 +12,7 @@ using namespace std;
 Game::Game()
 {
     // sample grass environment with actual pokemon object
-    forestGrass ={ "Forest", {{"Pidgey", PokemonType::NORMAL,40}, {"Caterpie", PokemonType::BUG,35},{"Zubat",PokemonType::POISION,30}}, 80 };
+    forestGrass ={ "Forest", {{"Pidgey", PokemonType::NORMAL,40,10}, {"Caterpie", PokemonType::BUG,35,7},{"Zubat",PokemonType::POISION,30,5}}, 80 };
 }
 
 void Game::gameLoop(Player& player)
@@ -52,8 +52,14 @@ void Game::gameLoop(Player& player)
         }
 
         case 2:
-            cout << "You head to the PokeCenter, but Nurse Joy is out on a Coffee break. Guess your Pokemon will have to tough it out now" << endl;
+        {
+            cout << "You head to the PokeCenter..." << endl;
+
+            player.chosenPokemon.heal(); //method to heal the player's pokemon
+
+            cout << player.chosenPokemon.name << "'s health has been fully restored." << endl;
             break;
+        }
 
         case 3:
             cout << "You march upto the Gym, but its closed for renovations, Seems like even Gym Leaders need a break" << endl;

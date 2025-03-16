@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
     // create Pokemon and player for the game
-    Pokemon charmander("Charmander", PokemonType::FIRE, 100); //using parameterized consructor 
+    Pokemon charmander("Charmander", PokemonType::FIRE, 100, 15); //using parameterized consructor 
 
 
     // initialize Professor Oak and player with default placeholder values
