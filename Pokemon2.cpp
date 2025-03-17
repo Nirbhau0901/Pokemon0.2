@@ -1,7 +1,7 @@
-#include "Game.h"
-#include "Player.h"
-#include "ProfessorOak.h"
-#include "Pokemon.h"
+#include "../../include/Main/Game.h"
+#include "../../../include/Character/Player/Player.h"
+#include "../../include/Character/ProfessorOak.h"
+#include "../../include/Pokemon/Pokemon.h"
 #include <iostream>
 #include <limits> // include this header to use numeric limits
 #include <string>

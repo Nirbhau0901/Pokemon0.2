@@ -1,8 +1,8 @@
 #pragma once
 // battlemanager.hpp
-#include "Pokemon.h"
-#include "Player.h"
-#include "BattleState.h"
+#include "../../include/Pokemon/Pokemon.h"
+#include "../../Include/Character/Player/Player.h"
+#include "../../include/Battle/BattleManager.h"
 
 class BattleManager
 {

@@ -2,7 +2,7 @@
 #pragma once 
 
 #include <string>
-#include "Pokemon.h"
+#include "../../include/Pokemon/Pokemon.h"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "grass.h"
+#include "../../include/Pokemon/grass.h"
 
 class WildEncounterManager
 {

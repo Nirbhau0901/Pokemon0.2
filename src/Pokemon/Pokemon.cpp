@@ -1,6 +1,6 @@
 //Pokemon.cpp
 
-#include "Pokemon.h"
+#include "../include/Pokemon.h"
 #include <iostream>
 #include "PokemonType.h"
 
