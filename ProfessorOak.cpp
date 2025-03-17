@@ -73,10 +73,8 @@ void ProfessorOak::explainMainQuest(Player& player)
     Utility::waitForEnter();
     cout << "Professor Oak: So, what do you say? Are you ready to become the next Pokemon Champion?" << endl;
     Utility::waitForEnter();
-    cout << "\n" << player.name << ": Ready as i'll ever be, Professor!" << endl;
+    cout << "\n" << player.name << ": Ready as I'll ever be, Professor!" << endl;
     Utility::waitForEnter();
     cout << "Professor Oak: That's the spirit! Now your Journey begins..." << endl;
-    Utility::waitForEnter();
-    cout << "Professor Oak: But first... Lets just pretend I didn't forget to set up the actual game loop... Ahem, Onwards" << endl;
     Utility::waitForEnter();
 }

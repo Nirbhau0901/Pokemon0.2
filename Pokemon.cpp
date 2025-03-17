@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int Pokemon::maxHealth = 50;
+int Pokemon::maxHealth = 100;
 
 //default constructor
 Pokemon::Pokemon() : name("Unknown"), type(PokemonType::NORMAL), health(50), attackPower(15) {}
@@ -20,14 +20,14 @@ Pokemon::Pokemon(const Pokemon&other) : name(other.name), type(other.type), heal
 //destructor
 Pokemon::~Pokemon() 
 {
-	cout << name << " has been released." << endl; //destructor logic goes here
+	//cout << name << " has been released." << endl; //destructor logic goes here
 }
 
-void Pokemon::attack(Pokemon &WildPokemon) // method for pokemon to attack 
+void Pokemon::attack(Pokemon &wildPokemon) // method for pokemon to attack 
 {
 	int damage = attackPower;
-	cout << name << " attacks " << WildPokemon.name << " for " << damage << " damage " << endl;
-	WildPokemon.TakeDamage(damage);
+	cout << name << " attacks " << wildPokemon.name << " for " << damage << " damage " << endl;
+	wildPokemon.TakeDamage(damage);
 }
 
 void Pokemon::TakeDamage(int damage) // method for poekmon taking damage 

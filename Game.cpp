@@ -1,5 +1,5 @@
 // Game.cpp
-#include "Player.h"
+#include "BattleManager.h"
 #include "Game.h"
 #include "Utility.h"
 #include "grass.h"
@@ -17,6 +17,7 @@ Game::Game()
 
 void Game::gameLoop(Player& player)
 {
+    BattleManager battleManager;
     int choice;
     bool keepPlaying = true;
 
@@ -45,9 +46,10 @@ void Game::gameLoop(Player& player)
         case 1:
         { //created a scope within case 1
             WildEncounterManager encounterManager;
-            Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+            Pokemon wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
 
-            cout << "A Wild " << encounteredPokemon.name << " Has Appeared!!" << endl;
+            battleManager.startBattle(player, wildPokemon);
+
             break;
         }
 
@@ -70,7 +72,6 @@ void Game::gameLoop(Player& player)
             break;
 
         case 5:
-            cout << "You try to quit, but Professor Oak's voice echoes, There's no quitting in Pokemon training!" << endl;
             cout << "Are you sure you want to quit?(y/n): ";
 
             char quitChoice;
