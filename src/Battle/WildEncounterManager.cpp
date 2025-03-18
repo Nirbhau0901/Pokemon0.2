@@ -1,4 +1,4 @@
-#include "../../include/Battle/WildEncounterManager.h"
+#include "../../header/Battle/WildEncounterManager.h"
 #include <cstdlib>
 #include <ctime>
 

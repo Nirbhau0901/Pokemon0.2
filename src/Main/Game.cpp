@@ -1,9 +1,10 @@
 // Game.cpp
-#include "BattleManager.h"
-#include "Game.h"
-#include "Utility.h"
-#include "grass.h"
-#include "WildEncounterManager.h"
+#include "../../header/Character/Player/Player.h"
+#include "../../header/Main/Game.h"
+#include "../../header/Utility/Utility.h"
+#include "../../header/Pokemon/grass.h"
+#include "../../header/Battle/WildEncounterManager.h"
+#include "../../header/Battle/BattleManager.h"
 
 #include <iostream>
 

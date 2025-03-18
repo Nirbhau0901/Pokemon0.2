@@ -131,7 +131,7 @@
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\Character\Player\Player.cpp" />
     <ClCompile Include="src\Pokemon\Pokemon.cpp" />
-    <ClCompile Include="Pokemon2.cpp" />
+    <ClCompile Include="src\Pokemon2.cpp" />
     <ClCompile Include="src\Character\ProfessorOak.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Battle\WildEncounterManager.cpp" />
@@ -141,17 +141,17 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Battle\BattleManager.h" />
-    <ClInclude Include="include\Battle\BattleState.h" />
-    <ClInclude Include="include\Main\Game.h" />
-    <ClInclude Include="include\Pokemon\grass.h" />
-    <ClInclude Include="include\Character\Player\Player.h" />
-    <ClInclude Include="include\Pokemon\Pokemon.h" />
-    <ClInclude Include="include\Pokemon\PokemonChoice.h" />
-    <ClInclude Include="include\Pokemon\PokemonType.h" />
-    <ClInclude Include="include\Character\ProfessorOak.h" />
-    <ClInclude Include="include\Utility\Utility.h" />
-    <ClInclude Include="include\Battle\WildEncounterManager.h" />
+    <ClInclude Include="header\Battle\BattleManager.h" />
+    <ClInclude Include="header\Battle\BattleState.h" />
+    <ClInclude Include="header\Main\Game.h" />
+    <ClInclude Include="header\Pokemon\grass.h" />
+    <ClInclude Include="header\Character\Player\Player.h" />
+    <ClInclude Include="header\Pokemon\Pokemon.h" />
+    <ClInclude Include="header\Pokemon\PokemonChoice.h" />
+    <ClInclude Include="header\Pokemon\PokemonType.h" />
+    <ClInclude Include="header\Character\ProfessorOak.h" />
+    <ClInclude Include="header\Utility\Utility.h" />
+    <ClInclude Include="header\Battle\WildEncounterManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

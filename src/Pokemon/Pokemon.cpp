@@ -1,8 +1,8 @@
 //Pokemon.cpp
 
-#include "../include/Pokemon.h"
+#include "../../header/Pokemon/Pokemon.h"
 #include <iostream>
-#include "PokemonType.h"
+#include "../../header/Pokemon/PokemonType.h"
 
 using namespace std;
 

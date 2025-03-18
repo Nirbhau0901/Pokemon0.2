@@ -1,6 +1,6 @@
 #pragma once
 // battle state.hpp
-#include "../../include/Pokemon/Pokemon.h"
+#include "../../header/Pokemon/Pokemon.h"
 
 struct BattleState
 {

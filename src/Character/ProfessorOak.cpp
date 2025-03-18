@@ -1,7 +1,7 @@
 // ProfessorOak.cpp
-#include "../../include/Character/ProfessorOak.h"
-#include "../../include/Character/Player/Player.h"
-#include "../../include/Utility/Utility.h"
+#include "../../header/Character/ProfessorOak.h"
+#include "../../header/Character/Player/Player.h"
+#include "../../header/Utility/Utility.h"
 #include <iostream>
 
 using namespace std;

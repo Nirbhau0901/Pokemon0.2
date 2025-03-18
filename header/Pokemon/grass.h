@@ -1,6 +1,6 @@
 #pragma once
 //grass.hpp
-#include "Pokemon.h"
+#include "../../header/Pokemon/Pokemon.h"
 #include <string>
 #include <vector>
 

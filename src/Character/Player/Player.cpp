@@ -1,9 +1,9 @@
 // Player.cpp
 
-#include "../../../include/Character/Player/Player.h"
-#include "../../../include/Pokemon/PokemonChoice.h"
-#include "../../../include/Pokemon/Pokemon.h"
-#include "../../../include/Utility/Utility.h"
+#include "../../../header/Character/Player/Player.h"
+#include "../../../header/Pokemon/PokemonChoice.h"
+#include "../../../header/Pokemon/Pokemon.h"
+#include "../../../header/Utility/Utility.h"
 #include <iostream>
 
 using namespace std;

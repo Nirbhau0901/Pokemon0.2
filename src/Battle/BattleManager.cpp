@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#include "../../include/Pokemon/Pokemon.h"
-#include "../../include/Character/Player/Player.h"
-#include "../../include/Battle/BattleManager.h"
-#include "../../include/Utility/Utility.h"
+#include "../../header/Pokemon/Pokemon.h"
+#include "../../header/Character/Player/Player.h"
+#include "../../header/Battle/BattleManager.h"
+#include "../../header/Utility/Utility.h"
 using namespace std;
 
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
