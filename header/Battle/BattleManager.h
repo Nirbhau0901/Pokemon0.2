@@ -4,6 +4,8 @@
 #include "../../header/Character/Player/Player.h"
 #include "../../header/Battle/BattleState.h"
 
+using namespace N_Player;
+
 class BattleManager
 {
 public:

@@ -6,6 +6,9 @@
 #include "../../header/Utility/Utility.h"
 using namespace std;
 
+using namespace N_Utility;
+using namespace N_Player;
+
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {
 	battleState.playerPokemon = &player.chosenPokemon;

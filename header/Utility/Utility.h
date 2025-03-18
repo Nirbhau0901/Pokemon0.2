@@ -1,8 +1,14 @@
 //Utility.h
-class Utility
+#pragma once
+
+namespace N_Utility
 {
-public:
-	static void clearConsole();
-	static void waitForEnter();
-	static void clearInputBuffer(); // function to clear any leftover characters
-};
+	class Utility
+	{
+	public:
+		static void clearConsole();
+		static void waitForEnter();
+		static void clearInputBuffer(); // function to clear any leftover characters
+	};
+
+}

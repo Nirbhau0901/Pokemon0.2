@@ -7,7 +7,8 @@
 #include <string>
 
 using namespace std;
-
+using namespace N_Main;
+//using namespace N_Player;
 
 int main()
 {
@@ -19,7 +20,7 @@ int main()
 
     ProfessorOak professor("Professor Oak");
 
-    Player player("Ash", charmander);
+    N_Player::Player player("Ash", charmander);
 
     // greeting the player and ofeering Pokemon choice
     professor.greetPlayer(player);

@@ -5,6 +5,7 @@
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 // parameterized constructor
 ProfessorOak::ProfessorOak(string p_name)

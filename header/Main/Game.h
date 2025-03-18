@@ -3,15 +3,19 @@
 
 class Player;
 
-class Game
+namespace N_Main
 {
 
-private:
+	class Game
+	{
 
-	Grass forestGrass;
+	private:
 
-public:
+		Grass forestGrass;
 
-	Game();
-	void gameLoop(Player& player);
-};
+	public:
+
+		Game();
+		void gameLoop(Player& player);
+	};
+}
