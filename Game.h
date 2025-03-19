@@ -1,10 +1,16 @@
+#pragma once
 // Game.hpp
-//#include "Grass.h"
+#include "Grass.h"
 
 class Player;
 
 class Game
 {
+
+private:
+
+	Grass forestGrass;
+
 public:
 
 	Game();

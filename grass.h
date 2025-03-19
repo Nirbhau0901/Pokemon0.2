@@ -11,4 +11,5 @@ struct Grass
 	string environmentType; //example forest, cave, riverbank
 	vector <Pokemon> wildPokemonList; // List of wild pokemon in the grass patch
 	int encounterRate; // likelihood of encountering a wild pokemon
+
 };

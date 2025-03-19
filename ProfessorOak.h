@@ -1,3 +1,4 @@
+#pragma once
 //Professor Oak.hpp
 #include <iostream>
 
