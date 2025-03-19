@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 class Pokemon;
 
 namespace N_Player
@@ -14,10 +15,10 @@ namespace N_Player
 	{
 	public:
 		string name;
-		Pokemon chosenPokemon;
+		N_Pokemon::Pokemon chosenPokemon;
 
 		Player(); // default constructor
-		Player(string p_name, Pokemon p_chosenPokemon); // parameterized constructor
+		Player(string p_name, N_Pokemon::Pokemon p_chosenPokemon); // parameterized constructor
 
 		void choosePokemon(int choice); //method to choose Pokemon
 	};

@@ -6,10 +6,13 @@
 
 using namespace std;
 
-struct Grass
+namespace N_Pokemon
 {
-	string environmentType; //example forest, cave, riverbank
-	vector <Pokemon> wildPokemonList; // List of wild pokemon in the grass patch
-	int encounterRate; // likelihood of encountering a wild pokemon
+	struct Grass
+	{
+		string environmentType; //example forest, cave, riverbank
+		vector <Pokemon> wildPokemonList; // List of wild pokemon in the grass patch
+		int encounterRate; // likelihood of encountering a wild pokemon
 
-};
+	};
+}

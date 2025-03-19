@@ -4,16 +4,19 @@
 #include "../../header/Character/Player/Player.h"
 #include "../../header/Battle/BattleState.h"
 
-using namespace N_Player;
+//using namespace N_Player;
 
-class BattleManager
+namespace N_Battle
 {
-public:
-	void startBattle(Player&player, Pokemon&wildPokemon); // method to start the battle 
+	class BattleManager
+	{
+	public:
+		void startBattle(N_Player::Player& player, N_Pokemon::Pokemon& wildPokemon); // method to start the battle 
 
-private:
-	BattleState battleState;
-	void battle(); // method of actual battle between pokemon
-	void HandleBattleOutcome(); // method to decide the outcome of the battle
-	void updateBattleState(); // method to update
-};
+	private:
+		BattleState battleState;
+		void battle(); // method of actual battle between pokemon
+		void HandleBattleOutcome(); // method to decide the outcome of the battle
+		void updateBattleState(); // method to update
+	};
+}

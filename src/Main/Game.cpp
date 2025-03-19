@@ -20,12 +20,12 @@ namespace N_Main
     Game::Game()
     {
         // sample grass environment with actual pokemon object
-        forestGrass = { "Forest", {{"Pidgey", PokemonType::NORMAL,40,10}, {"Caterpie", PokemonType::BUG,35,7},{"Zubat",PokemonType::POISION,30,5}}, 80 };
+        forestGrass = { "Forest", {{"Pidgey", N_Pokemon::PokemonType::NORMAL,40,10}, {"Caterpie", N_Pokemon::PokemonType::BUG,35,7},{"Zubat",N_Pokemon::PokemonType::POISION,30,5}}, 80 };
     }
 
-    void Game::gameLoop(Player& player)
+    void Game::gameLoop(N_Player::Player& player)
     {
-        BattleManager battleManager;
+        N_Battle::BattleManager battleManager;
         int choice;
         bool keepPlaying = true;
 
@@ -53,8 +53,8 @@ namespace N_Main
             {
             case 1:
             { //created a scope within case 1
-                WildEncounterManager encounterManager;
-                Pokemon wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                N_Battle::WildEncounterManager encounterManager;
+                N_Pokemon::Pokemon wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
 
                 battleManager.startBattle(player, wildPokemon);
 

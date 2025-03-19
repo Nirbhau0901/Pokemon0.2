@@ -1,5 +1,6 @@
 // Game.hpp
 #include "../../header/Pokemon/grass.h"
+#include "../../header/Character/Player/Player.h"
 
 class Player;
 
@@ -11,11 +12,11 @@ namespace N_Main
 
 	private:
 
-		Grass forestGrass;
+		N_Pokemon::Grass forestGrass;
 
 	public:
 
 		Game();
-		void gameLoop(Player& player);
+		void gameLoop(N_Player::Player& player);
 	};
 }

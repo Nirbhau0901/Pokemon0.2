@@ -9,11 +9,13 @@
 using namespace std;
 using namespace N_Main;
 //using namespace N_Player;
+using namespace N_Character;
+//using namespace N_Pokemon;
 
 int main()
 {
     // create Pokemon and player for the game
-    Pokemon charmander("Charmander", PokemonType::FIRE, 100, 15); //using parameterized consructor 
+    N_Pokemon::Pokemon charmander("Charmander", N_Pokemon::PokemonType::FIRE, 100, 15); //using parameterized consructor 
 
 
     // initialize Professor Oak and player with default placeholder values

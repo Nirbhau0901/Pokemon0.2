@@ -5,33 +5,35 @@
 using namespace std;
 
 
-
-class Pokemon
+namespace N_Pokemon
 {
-public:
-	string name;
-	PokemonType type;
-	int health; 
-	static int maxHealth;
-	int attackPower;
+	class Pokemon
+	{
+	public:
+		string name;
+		PokemonType type;
+		int health;
+		static int maxHealth;
+		int attackPower;
 
-	//default constructor
-	Pokemon();
+		//default constructor
+		Pokemon();
 
-	//Parameterized constructor
-	Pokemon(string p_name, PokemonType p_type, int p_maxHealth, int p_attackPower);
+		//Parameterized constructor
+		Pokemon(string p_name, PokemonType p_type, int p_maxHealth, int p_attackPower);
 
-	//Copy constructor
-	Pokemon(const Pokemon& other);
+		//Copy constructor
+		Pokemon(const Pokemon& other);
 
-	//Destructor
-	~Pokemon();
+		//Destructor
+		~Pokemon();
 
-	void attack(Pokemon &WildPokemon); //method for pokemon attack
+		void attack(Pokemon& WildPokemon); //method for pokemon attack
 
-	void TakeDamage(int damage); // method to recive damage and reduce pokemon health
+		void TakeDamage(int damage); // method to recive damage and reduce pokemon health
 
-	bool isFainted() const; // method to check if pokemon has fainted 
+		bool isFainted() const; // method to check if pokemon has fainted 
 
-	void heal(); // method to heal pokemon
-};
+		void heal(); // method to heal pokemon
+	};
+}

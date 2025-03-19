@@ -1,18 +1,23 @@
 //Professor Oak.hpp
 #include <iostream>
+#include "../../header/Character/Player/Player.h"
 
 using namespace std;
+//using namespace N_Player;
 
 class Player;
 
-class ProfessorOak
+namespace N_Character
 {
-public:
-	
-	string name;
+	class ProfessorOak
+	{
+	public:
 
-	ProfessorOak(string p_name);
-	void greetPlayer(Player& player);
-	void offerPokemonChoices(Player& player);
-	void explainMainQuest(Player& player);
-};
+		string name;
+
+		ProfessorOak(string p_name);
+		void greetPlayer(N_Player::Player& player);
+		void offerPokemonChoices(N_Player::Player& player);
+		void explainMainQuest(N_Player::Player& player);
+	};
+}
