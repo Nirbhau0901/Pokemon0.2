@@ -7,11 +7,11 @@ namespace N_Pokemon
 {
 	namespace N_Pokemons
 	{
-		class Pikachu :public Pokemon
+		class Zubat : public Pokemon
 		{
-		public:
-			Pikachu();
-			void thunderShock(Pokemon& target);
+			Zubat();
+
+			void supersonic(Pokemon& targetPokemon);
 		};
 	}
 }

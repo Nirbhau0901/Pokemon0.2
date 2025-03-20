@@ -7,11 +7,11 @@ namespace N_Pokemon
 {
 	namespace N_Pokemons
 	{
-		class Pikachu :public Pokemon
+		class Pidgey : public Pokemon
 		{
-		public:
-			Pikachu();
-			void thunderShock(Pokemon& target);
+			Pidgey();
+
+			void wingAttack(Pokemon& target);
 		};
 	}
 }
