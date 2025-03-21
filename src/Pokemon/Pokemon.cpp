@@ -73,4 +73,9 @@ namespace N_Pokemon
 	{
 		health = maxHealth; // set health to max health 
 	}
+
+	string Pokemon::getName()
+	{
+		return name;
+	}
 }

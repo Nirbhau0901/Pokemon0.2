@@ -67,7 +67,7 @@ namespace N_Main
 
                 player.chosenPokemon.heal(); //method to heal the player's pokemon
 
-                cout << player.chosenPokemon.name << "'s health has been fully restored." << endl;
+                cout << player.chosenPokemon.getName() << "'s health has been fully restored." << endl;
                 break;
             }
 

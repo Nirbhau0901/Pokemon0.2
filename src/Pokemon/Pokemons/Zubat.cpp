@@ -19,7 +19,7 @@ namespace N_Pokemon
 
 		void Zubat::supersonic(Pokemon& targetPokemon)
 		{
-			cout << name << " Uses Supersonic on " << targetPokemon.name << endl;
+			cout << name << " Uses Supersonic on " << targetPokemon.getName() << endl;
 			targetPokemon.TakeDamage(20);
 		}
 	}
