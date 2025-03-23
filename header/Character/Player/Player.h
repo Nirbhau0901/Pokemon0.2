@@ -7,7 +7,7 @@
 using namespace std;
 
 
-class Pokemon;
+//class Pokemon;
 
 namespace N_Player
 {
