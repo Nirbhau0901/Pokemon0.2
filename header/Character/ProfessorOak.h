@@ -5,7 +5,7 @@
 using namespace std;
 //using namespace N_Player;
 
-class Player;
+//class Player;
 
 namespace N_Character
 {

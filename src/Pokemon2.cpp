@@ -14,27 +14,31 @@ using namespace N_Character;
 
 int main()
 {
-    // create Pokemon and player for the game
-    N_Pokemon::Pokemon charmander("Charmander", N_Pokemon::PokemonType::FIRE, 100, 15); //using parameterized consructor 
+    // create Pokemon for the game
+   // N_Pokemon::Pokemon* pokemon = new charmander("Charmander", N_Pokemon::PokemonType::FIRE, 100, 15); //using parameterized consructor 
 
 
     // initialize Professor Oak and player with default placeholder values
 
-    ProfessorOak professor("Professor Oak");
+    ProfessorOak* professor = new ProfessorOak("Professor Oak");
 
-    N_Player::Player player("Ash", charmander);
+    N_Player::Player* player = new N_Player::Player();
 
     // greeting the player and ofeering Pokemon choice
-    professor.greetPlayer(player);
-    professor.offerPokemonChoices(player);
+    professor->greetPlayer(*player);
+    professor->offerPokemonChoices(*player);
 
     // explaining main quest
-    professor.explainMainQuest(player);
+    professor->explainMainQuest(*player);
 
-    Game game;// creating game object 
+    Game* game = new Game;// creating game object 
 
     //start the main game loop
-    game.gameLoop(player); // calling function from object 
+    game->gameLoop(*player); // calling function from object 
+
+    delete (professor);
+    delete (player);
+    delete (game);
 
     return 0;
 }
