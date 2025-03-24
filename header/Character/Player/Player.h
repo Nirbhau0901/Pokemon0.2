@@ -18,7 +18,7 @@ namespace N_Player
 		N_Pokemon::Pokemon* chosenPokemon; //using pointer
 
 		Player(); // default constructor
-		Player(string p_name, N_Pokemon::Pokemon p_chosenPokemon); // parameterized constructor
+		Player(string p_name); // parameterized constructor
 
 		void choosePokemon(int choice); //method to choose Pokemon
 	};

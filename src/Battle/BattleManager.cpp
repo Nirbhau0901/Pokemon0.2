@@ -13,14 +13,14 @@ using namespace N_Pokemon;
 namespace N_Battle
 {
 
-	void BattleManager::startBattle(Player& player, N_Pokemon::Pokemon& wildPokemon)
+	void BattleManager::startBattle(Player* player, N_Pokemon::Pokemon* wildPokemon)
 	{
-		battleState.playerPokemon = &player.chosenPokemon;
-		battleState.wildPokemon = &wildPokemon;
+		battleState.playerPokemon = player->chosenPokemon;
+		battleState.wildPokemon = wildPokemon;
 		battleState.playerTurn = true; // player attacks first
 		battleState.battleOngoing = true;
 
-		cout << "A wild " << wildPokemon.getName() << " has appeared!" << endl; // wild pokemon appears
+		cout << "A wild " << wildPokemon->getName() << " has appeared!" << endl; // wild pokemon appears
 		battle(); // calling method for actual battle 
 	}
 
@@ -30,11 +30,11 @@ namespace N_Battle
 		{
 			if (battleState.playerTurn)
 			{
-				battleState.playerPokemon->attack(*battleState.wildPokemon);
+				battleState.playerPokemon->attack(battleState.wildPokemon);
 			}
 			else
 			{
-				battleState.wildPokemon->attack(*battleState.playerPokemon);
+				battleState.wildPokemon->attack(battleState.playerPokemon);
 			}
 
 			// updating battle state after the turn
