@@ -18,10 +18,15 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Pidgey::wingAttack(Pokemon& targetPokemon)
+		void Pidgey::wingAttack(Pokemon* targetPokemon)
 		{
-			cout << name << " Uses Wing Attack on" << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(35);
+			cout << name << " Uses Wing Attack on" << targetPokemon->getName() << endl;
+			targetPokemon->TakeDamage(35);
+		}
+
+		void Pidgey::attack(Pokemon* targetPokemon)
+		{
+			wingAttack(targetPokemon);
 		}
 	}
 }

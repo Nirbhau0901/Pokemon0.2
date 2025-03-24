@@ -12,8 +12,10 @@ namespace N_Pokemon
 		public:
 			Pikachu();
 
+			void attack(Pokemon* wildPokemon);
+
 		private:
-			void thunderShock(Pokemon& target);
+			void thunderShock(Pokemon* wildPokemon);
 		};
 	}
 }

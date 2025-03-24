@@ -12,8 +12,10 @@ namespace N_Pokemon
 		public:
 			Caterpie();
 
+			void attack(Pokemon* targetPokemon);
+
 		private:
-			void bugBite(Pokemon& targetPokemon);
+			void bugBite(Pokemon* targetPokemon);
 		};
 	}
 }

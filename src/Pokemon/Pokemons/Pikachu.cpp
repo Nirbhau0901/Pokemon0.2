@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 20;
 		}
 
-		void Pikachu::thunderShock(Pokemon& wildPokemon)
+		void Pikachu::thunderShock(Pokemon* wildPokemon)
 		{
-			cout << name << " Uses Thundershock on " << wildPokemon.getName() << endl;
-			wildPokemon.TakeDamage(20);
+			cout << name << " Uses Thundershock on " << wildPokemon->getName() << endl;
+			wildPokemon->TakeDamage(20);
+		}
+
+		void Pikachu::attack(Pokemon* wildPokemon)
+		{
+			thunderShock(wildPokemon);
 		}
 	}
 }

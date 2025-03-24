@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Squirtle::waterSplash(Pokemon& targetPokemon)
+		void Squirtle::waterSplash(Pokemon* wildPokemon)
 		{
-			cout << name << " Uses Water Splash on " << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(20);
+			cout << name << " Uses Water Splash on " << wildPokemon->getName() << endl;
+			wildPokemon->TakeDamage(20);
+		}
+
+		void Squirtle::attack(Pokemon* wildPokemon)
+		{
+			waterSplash(wildPokemon);
 		}
 	}
 }

@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 20;
 		}
 
-		void Zubat::supersonic(Pokemon& targetPokemon)
+		void Zubat::supersonic(Pokemon* targetPokemon)
 		{
-			cout << name << " Uses Supersonic on " << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(20);
+			cout << name << " Uses Supersonic on " << targetPokemon->getName() << endl;
+			targetPokemon->TakeDamage(20);
+		}
+
+		void Zubat::attack(Pokemon* targetPokemon)
+		{
+			supersonic(targetPokemon);
 		}
 	}
 }

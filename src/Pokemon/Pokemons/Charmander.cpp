@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Charmander::flameBurst(Pokemon& targetPokemon)
+		void Charmander::flameBurst(Pokemon* wildPokemon) // chnaged from & to * as we are using pointers 
 		{
-			cout << name << " Uses Flame Burst on " << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(35);
+			cout << name << " Uses Flame Burst on " << wildPokemon->getName() << endl;
+			wildPokemon->TakeDamage(35);
+		}
+
+		void Charmander::attack(Pokemon* wildPokemon) // overriding attack function
+		{
+			flameBurst(wildPokemon);
 		}
 	}
 }

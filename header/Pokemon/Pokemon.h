@@ -32,7 +32,7 @@ namespace N_Pokemon
 		//Destructor
 		~Pokemon();
 
-		void attack(Pokemon& WildPokemon); //method for pokemon attack
+		virtual void attack(Pokemon& WildPokemon) = 0; //Abstract method for pokemon attack
 
 		void TakeDamage(int damage); // method to recive damage and reduce pokemon health
 

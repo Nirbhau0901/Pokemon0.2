@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 10;
 		}
 
-		void Caterpie::bugBite(Pokemon& targetPokemon)
+		void Caterpie::bugBite(Pokemon* targetPokemon)
 		{
-			cout << name << " Uses Bug Bite on " << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(10);
+			cout << name << " Uses Bug Bite on " << targetPokemon->getName() << endl;
+			targetPokemon->TakeDamage(10);
+		}
+
+		void Caterpie::attack(Pokemon* targetPokemon)
+		{
+			bugBite(targetPokemon);
 		}
 	}
 }

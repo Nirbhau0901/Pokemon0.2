@@ -17,10 +17,15 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Bulbasaur::vineWhip(Pokemon& targetPokemon)
+		void Bulbasaur::vineWhip(Pokemon* wildPokemon)
 		{
-			cout << name << " Uses Vine Whip on " << targetPokemon.getName() << endl;
-			targetPokemon.TakeDamage(20);
+			cout << name << " Uses Vine Whip on " << wildPokemon->getName() << endl;
+			wildPokemon->TakeDamage(20);
+		}
+
+		void Bulbasaur::attack(Pokemon* wildPokemon) //overriding attack method 
+		{
+			vineWhip(wildPokemon);
 		}
 	}
 }
