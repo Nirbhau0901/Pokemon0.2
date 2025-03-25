@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace N_Pokemon;
 
 namespace N_Battle
 {
@@ -10,9 +11,9 @@ namespace N_Battle
 		srand(time(0));
 	}
 
-	N_Pokemon::Pokemon* WildEncounterManager::getRandomPokemonFromGrass(const N_Pokemon::Grass* grass)
+	Pokemon* WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass)
 	{
-		int randomIndex = rand() % grass->wildPokemonList.size();
+		int randomIndex = rand() % grass.wildPokemonList.size();
 
 		return grass.wildPokemonList[randomIndex];
 	}

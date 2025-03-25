@@ -2,13 +2,14 @@
 #include <vector>
 #include "../../header/Pokemon/grass.h"
 
+using namespace N_Pokemon;
 
 namespace N_Battle
 {
 	class WildEncounterManager
 	{
 	public:
-		N_Pokemon::Pokemon getRandomPokemonFromGrass(const N_Pokemon::Grass& grass);
+		Pokemon* getRandomPokemonFromGrass(const Grass& grass);
 
 		WildEncounterManager();
 	};
