@@ -17,9 +17,11 @@ namespace N_Pokemon
 			health = 100;
 			maxHealth = 100;
 			attackPower = 35;
+			Move("VINE WHIP", 25);
+			Move("TACKLE", 10);
 		}
 
-		void Pikachu::thunderShock(Pokemon* wildPokemon)
+		/*void Pikachu::thunderShock(Pokemon* targetPokemon)
 		{
 			cout << name << " Uses THUNDER SHOCK!!" << endl;
 			Utility::waitForEnter();
@@ -27,18 +29,18 @@ namespace N_Pokemon
 			cout << "The Electricity shocks everything it touches." << endl;
 			Utility::waitForEnter();
 
-			wildPokemon->TakeDamage(attackPower);
+			targetPokemon->TakeDamage(attackPower);
 
-			if (wildPokemon->isFainted())
-				cout << wildPokemon->getName() << " has fainted!" << endl;
+			if (targetPokemon->isFainted())
+				cout << targetPokemon->getName() << " has fainted!" << endl;
 			else
-				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
+				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Pikachu::attack(Pokemon* wildPokemon)
+		void Pikachu::attack(Pokemon* targetPokemon)
 		{
-			thunderShock(wildPokemon);
+			selectAndUseMove(targetPokemon);
 		}
 	}
 }

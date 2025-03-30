@@ -19,7 +19,7 @@ namespace N_Pokemon
 		static int maxHealth;
 		int attackPower;
 
-		void selectAndUseMove(Pokemon* target); //method for selecting and using a move
+		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
 
 	public:
 		
@@ -36,7 +36,7 @@ namespace N_Pokemon
 		//Destructor
 		~Pokemon();
 
-		virtual void attack(Pokemon* WildPokemon) = 0; //Abstract method for pokemon attack
+		virtual void attack(Move selectedMove, Pokemon* targetPokemon) = 0; //Abstract method for pokemon attack
 
 		void TakeDamage(int damage); // method to recive damage and reduce pokemon health
 
@@ -50,6 +50,10 @@ namespace N_Pokemon
 
 		vector<Move>moves;
 
+		void showAvailableMoves();
 
+		int selectMove();
+
+		void useMove(Move selectedMove, Pokemon* target);
 	};
 }

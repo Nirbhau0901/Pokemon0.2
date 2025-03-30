@@ -3,8 +3,10 @@
 #include "../../header/Pokemon/Pokemon.h"
 #include <iostream>
 #include "../../header/Pokemon/PokemonType.h"
+#include "../../header/Utility/Utility.h"
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
@@ -82,5 +84,63 @@ namespace N_Pokemon
 	int Pokemon::getHealth()
 	{
 		return health;
+	}
+
+	void Pokemon::selectAndUseMove(Pokemon* targetPokemon)
+	{
+		//show available moves
+		showAvailableMoves();
+
+		//Player Input
+		int choice = selectMove();
+		Move selectedMove = moves[choice - 1];
+
+		//execute the move
+		useMove(selectedMove, targetPokemon);
+	}
+
+	void Pokemon::showAvailableMoves()
+	{
+		cout << name << "'s available moves:" << endl;
+		//listing all the moves for the player to choose from
+
+		for (size_t i = 0; i < moves.size(); ++i)
+		{
+			cout << i + 1 << ": " << moves[i].name << "Power: " << moves[i].power << endl;
+		}
+	}
+
+	int Pokemon::selectMove()
+	{
+		//asking player to select a move
+		int choice;
+		cout << "Choose a move: ";
+		cin >> choice;
+
+		//validating the choice
+
+		while (choice<1 || choice>static_cast<int>(moves.size()))
+		{
+			cout << "Invalid Choice. Try Again!!";
+			cin >> choice;
+		}
+
+		return choice;
+	}
+
+	void Pokemon::useMove(Move selectedMove, Pokemon* targetPokemon)
+	{
+		cout << name << "Used " << selectedMove.name << "!" << endl;
+		attack(selectedMove, targetPokemon);
+
+		Utility::waitForEnter();
+
+		cout << "..." << endl;
+		Utility::waitForEnter();
+
+		if (targetPokemon->isFainted())
+			cout << targetPokemon->getName() << " Fainted!" << endl;
+		else
+			cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
 	}
 }
