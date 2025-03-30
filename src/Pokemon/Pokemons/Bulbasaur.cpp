@@ -17,9 +17,11 @@ namespace N_Pokemon
 			health = 100;
 			maxHealth = 100;
 			attackPower = 35;
+			/*Move("VINE WHIP", 35);
+			Move("Tackle", 15);*/
 		}
 
-		void Bulbasaur::vineWhip(Pokemon* wildPokemon)
+		/*void Bulbasaur::vineWhip(Pokemon* wildPokemon)
 		{
 			cout << name << " Uses VINE WHIP!!" << endl;
 			Utility::waitForEnter();
@@ -34,11 +36,11 @@ namespace N_Pokemon
 			else
 				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Bulbasaur::attack(Pokemon* wildPokemon) //overriding attack method 
+		void Bulbasaur::attack(Move selectedMove, Pokemon* targetPokemon) //overriding attack method 
 		{
-			vineWhip(wildPokemon);
+			selectAndUseMove(targetPokemon) ;
 		}
 	}
 }

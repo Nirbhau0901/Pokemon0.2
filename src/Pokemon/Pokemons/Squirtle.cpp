@@ -19,7 +19,7 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Squirtle::waterSplash(Pokemon* wildPokemon)
+		/*void Squirtle::waterSplash(Pokemon* wildPokemon)
 		{
 			cout << name << " Uses WATER SPLASH!!" << endl;
 			Utility::waitForEnter();
@@ -34,11 +34,11 @@ namespace N_Pokemon
 			else
 				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Squirtle::attack(Pokemon* wildPokemon)
+		void Squirtle::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
-			waterSplash(wildPokemon);
+			selectAndUseMove(targetPokemon);
 		}
 	}
 }

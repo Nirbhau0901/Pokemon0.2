@@ -30,7 +30,7 @@ namespace N_Battle
 		{
 			if (battleState.playerTurn)
 			{
-				battleState.playerPokemon->attack(battleState.wildPokemon);
+				battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
 			}
 			else
 			{

@@ -12,10 +12,10 @@ namespace N_Pokemon
 		public:
 			Charmander();
 
-			void attack(Pokemon* wildPokemon);
+			void attack(Move selectedMove, Pokemon* wildPokemon);
 
-		private:
-			void flameBurst(Pokemon* wildPokemon);  // changed from & to * as we are using pointers
+		//private:
+		//	void flameBurst(Pokemon* wildPokemon);  // changed from & to * as we are using pointers
 		};
 	}
 }

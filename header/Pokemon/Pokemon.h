@@ -19,7 +19,7 @@ namespace N_Pokemon
 		static int maxHealth;
 		int attackPower;
 
-		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
+		
 
 	public:
 		
@@ -55,5 +55,7 @@ namespace N_Pokemon
 		int selectMove();
 
 		void useMove(Move selectedMove, Pokemon* target);
+
+		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
 	};
 }

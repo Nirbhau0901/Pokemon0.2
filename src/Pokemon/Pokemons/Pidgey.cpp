@@ -20,7 +20,7 @@ namespace N_Pokemon
 			attackPower = 30;
 		}
 
-		void Pidgey::wingAttack(Pokemon* targetPokemon)
+		/*void Pidgey::wingAttack(Pokemon* targetPokemon)
 		{
 			cout << name << " Uses WING ATTACK!!" << endl;
 			Utility::waitForEnter();
@@ -35,11 +35,11 @@ namespace N_Pokemon
 			else
 				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Pidgey::attack(Pokemon* targetPokemon)
+		void Pidgey::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
-			wingAttack(targetPokemon);
+			selectAndUseMove(targetPokemon);
 		}
 	}
 }

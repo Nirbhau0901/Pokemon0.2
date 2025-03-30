@@ -17,9 +17,10 @@ namespace N_Pokemon
 			health = 100;
 			maxHealth = 100;
 			attackPower = 10;
+
 		}
 
-		void Caterpie::bugBite(Pokemon* targetPokemon)
+		/*void Caterpie::bugBite(Pokemon* targetPokemon)
 		{
 			cout << name << " Uses BUG BITE!!" << endl;
 			Utility::waitForEnter();
@@ -34,11 +35,11 @@ namespace N_Pokemon
 			else
 				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Caterpie::attack(Pokemon* targetPokemon)
+		void Caterpie::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
-			bugBite(targetPokemon);
+			selectAndUseMove(targetPokemon);
 		}
 	}
 }

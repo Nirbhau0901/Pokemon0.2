@@ -12,9 +12,10 @@ namespace N_Pokemon
 		public:
 			Squirtle();
 
-			void attack(Pokemon* wildPokemon);
-		private:
-			void waterSplash(Pokemon* wildPokemon);
+			void attack(Move selectedMove, Pokemon* wildPokemon);
+
+		/*private:
+			void waterSplash(Pokemon* wildPokemon);*/
 		};
 	}
 }

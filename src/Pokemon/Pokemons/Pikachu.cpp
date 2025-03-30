@@ -17,8 +17,8 @@ namespace N_Pokemon
 			health = 100;
 			maxHealth = 100;
 			attackPower = 35;
-			Move("VINE WHIP", 25);
-			Move("TACKLE", 10);
+			/*Move("VINE WHIP", 25);
+			Move("TACKLE", 10);*/
 		}
 
 		/*void Pikachu::thunderShock(Pokemon* targetPokemon)
@@ -38,7 +38,7 @@ namespace N_Pokemon
 			Utility::waitForEnter();
 		}*/
 
-		void Pikachu::attack(Pokemon* targetPokemon)
+		void Pikachu::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
 			selectAndUseMove(targetPokemon);
 		}

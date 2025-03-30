@@ -19,26 +19,26 @@ namespace N_Pokemon
 			attackPower = 35;
 		}
 
-		void Charmander::flameBurst(Pokemon* wildPokemon) // chnaged from & to * as we are using pointers 
+		//void Charmander::flameBurst(Pokemon* wildPokemon) // chnaged from & to * as we are using pointers 
+		//{
+		//	cout << name << " Uses FLAME BURST!!" << endl;
+		//	Utility::waitForEnter();
+
+		//	cout << "The Burst of Fire covers the ground." << endl;
+		//	Utility::waitForEnter();
+
+		//	wildPokemon->TakeDamage(attackPower);
+
+		//	if (wildPokemon->isFainted())
+		//		cout << wildPokemon->getName() << " has fainted!" << endl;
+		//	else
+		//		cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
+		//	Utility::waitForEnter();
+		//}
+
+		void Charmander::attack(Move selectedMove, Pokemon* wildPokemon) // overriding attack function
 		{
-			cout << name << " Uses FLAME BURST!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "The Burst of Fire covers the ground." << endl;
-			Utility::waitForEnter();
-
-			wildPokemon->TakeDamage(attackPower);
-
-			if (wildPokemon->isFainted())
-				cout << wildPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}
-
-		void Charmander::attack(Pokemon* wildPokemon) // overriding attack function
-		{
-			flameBurst(wildPokemon);
+			selectAndUseMove(wildPokemon);
 		}
 	}
 }

@@ -19,7 +19,7 @@ namespace N_Pokemon
 			attackPower = 20;
 		}
 
-		void Zubat::supersonic(Pokemon* targetPokemon)
+		/*void Zubat::supersonic(Pokemon* targetPokemon)
 		{
 			cout << name << " Uses SUPERSONIC!!" << endl;
 			Utility::waitForEnter();
@@ -34,11 +34,11 @@ namespace N_Pokemon
 			else
 				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
 			Utility::waitForEnter();
-		}
+		}*/
 
-		void Zubat::attack(Pokemon* targetPokemon)
+		void Zubat::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
-			supersonic(targetPokemon);
+			selectAndUseMove(targetPokemon);
 		}
 	}
 }

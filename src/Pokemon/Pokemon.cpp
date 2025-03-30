@@ -49,12 +49,10 @@ namespace N_Pokemon
 		//cout << name << " has been released." << endl; //destructor logic goes here
 	}
 
-	//void Pokemon::attack(Pokemon& wildPokemon) // method for pokemon to attack 
-	//{
-	//	int damage = attackPower;
-	//	cout << name << " attacks " << wildPokemon.name << " for " << damage << " damage " << endl;
-	//	wildPokemon.TakeDamage(damage);
-	//}
+	void Pokemon::attack(Move selectedMove, Pokemon* targetPokemon) // method for pokemon to attack 
+	{
+		targetPokemon->TakeDamage(selectedMove.power);
+	}
 
 	void Pokemon::TakeDamage(int damage) // method for poekmon taking damage 
 	{
