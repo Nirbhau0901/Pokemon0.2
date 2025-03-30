@@ -41,5 +41,7 @@ namespace N_Pokemon
 		void heal(); // method to heal pokemon
 
 		string getName();
+
+		int getHealth();
 	};
 }

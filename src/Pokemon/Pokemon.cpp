@@ -78,4 +78,9 @@ namespace N_Pokemon
 	{
 		return name;
 	}
+
+	int Pokemon::getHealth()
+	{
+		return health;
+	}
 }

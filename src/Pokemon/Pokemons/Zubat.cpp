@@ -1,8 +1,10 @@
 #include "../../../header/Pokemon/Pokemons/Zubat.h"
 #include "../../../header/Pokemon/PokemonType.h"
+#include "../../../header/Utility/Utility.h"
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
@@ -19,8 +21,19 @@ namespace N_Pokemon
 
 		void Zubat::supersonic(Pokemon* targetPokemon)
 		{
-			cout << name << " Uses Supersonic on " << targetPokemon->getName() << endl;
-			targetPokemon->TakeDamage(20);
+			cout << name << " Uses SUPERSONIC!!" << endl;
+			Utility::waitForEnter();
+
+			cout << "The Sonic waves makes the ears ring..." << endl;
+			Utility::waitForEnter();
+
+			targetPokemon->TakeDamage(attackPower);
+
+			if (targetPokemon->isFainted())
+				cout << targetPokemon->getName() << " has fainted!" << endl;
+			else
+				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
+			Utility::waitForEnter();
 		}
 
 		void Zubat::attack(Pokemon* targetPokemon)
