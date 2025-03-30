@@ -1,6 +1,8 @@
 #pragma once
 #include "PokemonType.h"
+#include "Move.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ namespace N_Pokemon
 		int health;
 		static int maxHealth;
 		int attackPower;
+
+		void selectAndUseMove(Pokemon* target); //method for selecting and using a move
 
 	public:
 		
@@ -43,5 +47,9 @@ namespace N_Pokemon
 		string getName();
 
 		int getHealth();
+
+		vector<Move>moves;
+
+
 	};
 }
