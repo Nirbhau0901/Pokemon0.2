@@ -22,13 +22,12 @@ namespace N_Pokemon
 		
 
 	public:
-		
 
 		//default constructor
 		Pokemon();
 
 		//Parameterized constructor
-		Pokemon(string p_name, PokemonType p_type, int p_maxHealth, int p_attackPower);
+		Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move> p_moves);
 
 		//Copy constructor
 		Pokemon(const Pokemon& other);
@@ -57,5 +56,7 @@ namespace N_Pokemon
 		void useMove(Move selectedMove, Pokemon* target);
 
 		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
+
+		int reduceAttackPower(int reduceDamage);
 	};
 }

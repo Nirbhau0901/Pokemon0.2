@@ -11,15 +11,10 @@ namespace N_Pokemon
 	namespace N_Pokemons
 	{
 		Bulbasaur::Bulbasaur()
-		{
-			name = "Bulbasaur";
-			type = PokemonType::GRASS;
-			health = 100;
-			maxHealth = 100;
-			attackPower = 35;
-			/*Move("VINE WHIP", 35);
-			Move("Tackle", 15);*/
-		}
+			:Pokemon("Bulbasaur", PokemonType::GRASS, 110, {
+			 Move ("VINE WHIP",25),
+			 Move ("TACKLE",10)
+				}){}
 
 		/*void Bulbasaur::vineWhip(Pokemon* wildPokemon)
 		{
@@ -40,7 +35,21 @@ namespace N_Pokemon
 
 		void Bulbasaur::attack(Move selectedMove, Pokemon* targetPokemon) //overriding attack method 
 		{
-			selectAndUseMove(targetPokemon) ;
+			Pokemon::attack(selectedMove, targetPokemon) ;
+
+			if (selectedMove.name == "VINE WHIP")
+			{
+				int secondHitChance = rand() % 2;
+
+				if (secondHitChance == 1)
+				{
+					Pokemon::attack(selectedMove, targetPokemon);
+					cout << name << " hits a second " << selectedMove.name << endl;
+				}
+				else
+					cout << name << targetPokemon->getName() << " dodge's the second hit!" << endl;
+				Utility::waitForEnter();
+			}
 		}
 	}
 }

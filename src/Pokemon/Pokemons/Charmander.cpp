@@ -11,13 +11,10 @@ namespace N_Pokemon
 	namespace N_Pokemons
 	{
 		Charmander::Charmander()
-		{
-			name = "Charmander";
-			type = PokemonType::FIRE;
-			health = 100;
-			maxHealth = 100;
-			attackPower = 35;
-		}
+			:Pokemon("Charmander", PokemonType::FIRE, 110, {
+			Move("FLAME BURST",30),
+			Move("BLAZING CHARGE",80)
+				}) {}
 
 		//void Charmander::flameBurst(Pokemon* wildPokemon) // chnaged from & to * as we are using pointers 
 		//{
@@ -36,9 +33,16 @@ namespace N_Pokemon
 		//	Utility::waitForEnter();
 		//}
 
-		void Charmander::attack(Move selectedMove, Pokemon* wildPokemon) // overriding attack function
+		void Charmander::attack(Move selectedMove, Pokemon* targetPokemon) // overriding attack function
 		{
-			selectAndUseMove(wildPokemon);
+			Pokemon::attack(selectedMove, targetPokemon);
+
+			if (selectedMove.name == "BLAZING CHARGE")
+			{
+				this->TakeDamage(10); // using this keyword to specify the take damage on charmander subclass as the take damage function is already being called in the attack function
+				cout << name << " takes a recoil damage of 10 points from using BLAZING CHARGE." << endl;
+				Utility::waitForEnter();
+			}
 		}
 	}
 }

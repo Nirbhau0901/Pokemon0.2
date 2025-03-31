@@ -24,6 +24,11 @@ namespace N_Battle
 		battle(); // calling method for actual battle 
 	}
 
+	bool BattleManager::stopBattle()
+	{
+		battleState.battleOngoing = false;
+	}
+
 	void BattleManager::battle()
 	{
 		while (battleState.battleOngoing)

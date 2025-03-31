@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../../header/Pokemon/PokemonType.h"
 #include "../../header/Utility/Utility.h"
+#include "../../header/Pokemon/Move.h"
 
 using namespace std;
 using namespace N_Utility;
@@ -24,13 +25,13 @@ namespace N_Pokemon
 	}
 
 	//parameterized constructor
-	Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower)
+	Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move> p_moves)
 	{
 		name = p_name;
 		type = p_type;
 		health = p_health;
 		maxHealth = p_health;
-		attackPower = p_attackPower;
+		moves = p_moves;
 	}
 
 	//copy constructor
@@ -40,7 +41,7 @@ namespace N_Pokemon
 		type = other.type;
 		health = other.health;
 		maxHealth = other.maxHealth;
-		attackPower = other.attackPower;
+		moves = other.moves;
 	}
 
 	//destructor
@@ -140,5 +141,12 @@ namespace N_Pokemon
 			cout << targetPokemon->getName() << " Fainted!" << endl;
 		else
 			cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
+	}
+
+	int Pokemon::reduceAttackPower(int reduceDamage)
+	{
+		attackPower = attackPower - reduceDamage;
+
+		return attackPower;
 	}
 }

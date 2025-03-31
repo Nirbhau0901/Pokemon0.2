@@ -11,13 +11,10 @@ namespace N_Pokemon
 	namespace N_Pokemons
 	{
 		Squirtle::Squirtle()
-		{
-			name = "Squirtle";
-			type = PokemonType::WATER;
-			health = 100;
-			maxHealth = 100;
-			attackPower = 35;
-		}
+			:Pokemon("Squirtle", PokemonType::WATER, 110, {
+			Move("WATER SPLASH",30),
+			Move("RAPID SPIN",5)
+				}) {}
 
 		/*void Squirtle::waterSplash(Pokemon* wildPokemon)
 		{
@@ -38,7 +35,21 @@ namespace N_Pokemon
 
 		void Squirtle::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
-			selectAndUseMove(targetPokemon);
+			Pokemon::attack(selectedMove, targetPokemon);
+
+			if (selectedMove.name == "RAPID SPIN")
+			{
+				//Random number of hits between 2-5
+				int hits = (rand() % 4) + 2;
+
+				//spliting damage across hits
+				for (int i = 0; i < hits; ++i)
+				{
+					Pokemon::attack(selectedMove, targetPokemon);
+				}
+
+				cout << "And hits " << hits << " times!" << endl;
+			}
 		}
 	}
 }

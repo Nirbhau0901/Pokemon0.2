@@ -14,6 +14,8 @@ namespace N_Pokemon
 
 			void attack(Move selectedMove, Pokemon* targetPokemon);
 
+			int reduceAttackPower(int reduceDamage);
+
 		/*private:
 			void bugBite(Pokemon* targetPokemon);*/
 		};
