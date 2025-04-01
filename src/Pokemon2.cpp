@@ -34,7 +34,7 @@ int main()
     Game* game = new Game;// creating game object 
 
     //start the main game loop
-    game->gameLoop(*player); // calling function from object 
+    game->gameLoop(player); // calling function from object 
 
     delete (professor);
     delete (player);

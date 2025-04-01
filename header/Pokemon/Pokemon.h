@@ -1,6 +1,8 @@
 #pragma once
 #include "PokemonType.h"
+#include "Move.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -17,14 +19,15 @@ namespace N_Pokemon
 		static int maxHealth;
 		int attackPower;
 
-	public:
 		
+
+	public:
 
 		//default constructor
 		Pokemon();
 
 		//Parameterized constructor
-		Pokemon(string p_name, PokemonType p_type, int p_maxHealth, int p_attackPower);
+		Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move> p_moves);
 
 		//Copy constructor
 		Pokemon(const Pokemon& other);
@@ -32,7 +35,7 @@ namespace N_Pokemon
 		//Destructor
 		~Pokemon();
 
-		void attack(Pokemon& WildPokemon); //method for pokemon attack
+		virtual void attack(Move selectedMove, Pokemon* targetPokemon) = 0; //Abstract method for pokemon attack
 
 		void TakeDamage(int damage); // method to recive damage and reduce pokemon health
 
@@ -41,5 +44,19 @@ namespace N_Pokemon
 		void heal(); // method to heal pokemon
 
 		string getName();
+
+		int getHealth();
+
+		vector<Move>moves;
+
+		void showAvailableMoves();
+
+		int selectMove();
+
+		void useMove(Move selectedMove, Pokemon* target);
+
+		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
+
+		int reduceAttackPower(int reduceDamage);
 	};
 }

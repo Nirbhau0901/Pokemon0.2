@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "../../header/Pokemon/Pokemon.h"
 #include "../../header/Character/Player/Player.h"
 #include "../../header/Battle/BattleManager.h"
@@ -13,15 +14,22 @@ using namespace N_Pokemon;
 namespace N_Battle
 {
 
-	void BattleManager::startBattle(Player& player, N_Pokemon::Pokemon& wildPokemon)
+	void BattleManager::startBattle(Player* player, N_Pokemon::Pokemon* wildPokemon)
 	{
-		battleState.playerPokemon = &player.chosenPokemon;
-		battleState.wildPokemon = &wildPokemon;
+		battleState.playerPokemon = player->chosenPokemon;
+		battleState.wildPokemon = wildPokemon;
 		battleState.playerTurn = true; // player attacks first
 		battleState.battleOngoing = true;
 
-		cout << "A wild " << wildPokemon.getName() << " has appeared!" << endl; // wild pokemon appears
+		cout << "A wild " << wildPokemon->getName() << " has appeared!" << endl; // wild pokemon appears
 		battle(); // calling method for actual battle 
+	}
+
+	bool BattleManager::stopBattle()
+	{
+		battleState.battleOngoing = false;
+
+		return battleState.battleOngoing;
 	}
 
 	void BattleManager::battle()
@@ -30,11 +38,24 @@ namespace N_Battle
 		{
 			if (battleState.playerTurn)
 			{
-				battleState.playerPokemon->attack(*battleState.wildPokemon);
+				battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
 			}
 			else
 			{
-				battleState.wildPokemon->attack(*battleState.playerPokemon);
+				if (battleState.wildPokemon->moves.empty())
+				{
+					cout << "Error: Wild pokemon has no moves." << endl;
+					
+					return;
+				}
+				
+				//randomly selecting one of the pokemon's move
+				int moveIndex = rand() % battleState.wildPokemon->moves.size();
+				Move selectedMove = battleState.wildPokemon->moves[moveIndex];
+
+				//wild Pokemon attacks using the selected move
+				cout << "Wild " << battleState.wildPokemon->getName() << " used " << selectedMove.name << "!" << endl;
+				battleState.wildPokemon->attack(selectedMove, battleState.playerPokemon);
 			}
 
 			// updating battle state after the turn

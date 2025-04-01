@@ -5,11 +5,15 @@
 #include "../../header/Pokemon/grass.h"
 #include "../../header/Battle/WildEncounterManager.h"
 #include "../../header/Battle/BattleManager.h"
+#include "../../header/Pokemon/Pokemons/Pidgey.h"
+#include "../../header/Pokemon/Pokemons/Caterpie.h"
+#include "../../header/Pokemon/Pokemons/Zubat.h"
 
 #include <iostream>
 
 using namespace std;
 using namespace N_Player;
+using namespace N_Pokemon::N_Pokemons;
 
 namespace N_Main
 {
@@ -20,10 +24,16 @@ namespace N_Main
     Game::Game()
     {
         // sample grass environment with actual pokemon object
-        forestGrass = { "Forest", {{"Pidgey", N_Pokemon::PokemonType::NORMAL,40,10}, {"Caterpie", N_Pokemon::PokemonType::BUG,35,7},{"Zubat",N_Pokemon::PokemonType::POISION,30,5}}, 80 };
+        forestGrass = new Grass{ "Forest", { new Pidgey(), new Caterpie(), new Zubat()}, 80};
+        wildPokemon = nullptr;
     }
 
-    void Game::gameLoop(N_Player::Player& player)
+    Game::~Game()
+    {
+        delete(wildPokemon);
+    }
+
+    void Game::gameLoop(N_Player::Player* player)
     {
         N_Battle::BattleManager battleManager;
         int choice;
@@ -35,7 +45,7 @@ namespace N_Main
 
             // Display options to the player
 
-            cout << "What would you like to do next, " << player.name << "?" << endl;
+            cout << "What would you like to do next, " << player->name << "?" << endl;
             cout << "1. Battle wild Pokemon." << endl;
             cout << "2. Visit PokeCenter." << endl;
             cout << "3. Challenge Gyms." << endl;
@@ -54,7 +64,7 @@ namespace N_Main
             case 1:
             { //created a scope within case 1
                 N_Battle::WildEncounterManager encounterManager;
-                N_Pokemon::Pokemon wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                N_Pokemon::Pokemon* wildPokemon = encounterManager.getRandomPokemonFromGrass(*forestGrass);
 
                 battleManager.startBattle(player, wildPokemon);
 
@@ -65,9 +75,9 @@ namespace N_Main
             {
                 cout << "You head to the PokeCenter..." << endl;
 
-                player.chosenPokemon.heal(); //method to heal the player's pokemon
+                player->chosenPokemon->heal(); //method to heal the player's pokemon
 
-                cout << player.chosenPokemon.getName() << "'s health has been fully restored." << endl;
+                cout << player->chosenPokemon->getName() << "'s health has been fully restored." << endl;
                 break;
             }
 
@@ -100,7 +110,7 @@ namespace N_Main
 
             Utility::waitForEnter();
 
-            cout << "Goodbye " << player.name << "! Thanks for playing!" << endl;
+            cout << "Goodbye " << player->name << "! Thanks for playing!" << endl;
 
 
         }

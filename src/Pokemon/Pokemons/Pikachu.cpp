@@ -1,26 +1,53 @@
 #include "../../../header/Pokemon/Pokemons/Pikachu.h"
-#include"../../../header/Pokemon/PokemonType.h"
+#include "../../../header/Pokemon/PokemonType.h"
+#include "../../../header/Utility/Utility.h"
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
 	namespace N_Pokemons
 	{
 		Pikachu::Pikachu()
-		{
-			name = "Pikachu";
-			type = PokemonType::ELECTRIC;
-			health = 100;
-			maxHealth = 100;
-			attackPower = 20;
-		}
+			:Pokemon("Pikachu", PokemonType::ELECTRIC, 110, {
+			Move("THUNDER SHOCK",35),
+			Move("THUNDER BOLT",80)
+				}) {}
 
-		void Pikachu::thunderShock(Pokemon& wildPokemon)
+		/*void Pikachu::thunderShock(Pokemon* targetPokemon)
 		{
-			cout << name << " Uses Thundershock on " << wildPokemon.getName() << endl;
-			wildPokemon.TakeDamage(20);
+			cout << name << " Uses THUNDER SHOCK!!" << endl;
+			Utility::waitForEnter();
+
+			cout << "The Electricity shocks everything it touches." << endl;
+			Utility::waitForEnter();
+
+			targetPokemon->TakeDamage(attackPower);
+
+			if (targetPokemon->isFainted())
+				cout << targetPokemon->getName() << " has fainted!" << endl;
+			else
+				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
+			Utility::waitForEnter();
+		}*/
+
+		void Pikachu::attack(Move selectedMove, Pokemon* targetPokemon)
+		{
+			if (selectedMove.name == "THUNDER BOLT")
+			{
+				//80% chances of hitting the target
+				if (rand() % 100 < 80)
+				{
+					Pokemon::attack(selectedMove, targetPokemon);
+					cout << "... and hits the target!!" << endl;
+				}
+				else
+					cout << "... but missed the target." << endl;
+			}
+			else
+				Pokemon::attack(selectedMove, targetPokemon);
 		}
 	}
 }

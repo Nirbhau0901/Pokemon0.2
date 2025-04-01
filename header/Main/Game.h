@@ -3,6 +3,8 @@
 #include "../../header/Character/Player/Player.h"
 
 class Player;
+using namespace N_Pokemon;
+
 
 namespace N_Main
 {
@@ -12,11 +14,14 @@ namespace N_Main
 
 	private:
 
-		N_Pokemon::Grass forestGrass;
+		Grass* forestGrass;
+		Pokemon* wildPokemon;
 
 	public:
 
 		Game();
-		void gameLoop(N_Player::Player& player);
+		~Game();
+		void gameLoop(N_Player::Player* player);
+		/*void visitPokeCenter(N_Player::Player* player);*/
 	};
 }
