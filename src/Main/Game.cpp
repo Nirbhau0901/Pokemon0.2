@@ -25,6 +25,7 @@ namespace N_Main
     {
         // sample grass environment with actual pokemon object
         forestGrass = new Grass{ "Forest", { new Pidgey(), new Caterpie(), new Zubat()}, 80};
+        wildPokemon = nullptr;
     }
 
     Game::~Game()

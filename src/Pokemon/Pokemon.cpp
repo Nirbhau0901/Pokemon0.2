@@ -32,6 +32,7 @@ namespace N_Pokemon
 		health = p_health;
 		maxHealth = p_health;
 		moves = p_moves;
+		attackPower = 10;
 	}
 
 	//copy constructor
@@ -42,6 +43,7 @@ namespace N_Pokemon
 		health = other.health;
 		maxHealth = other.maxHealth;
 		moves = other.moves;
+		attackPower = other.attackPower;
 	}
 
 	//destructor
@@ -52,7 +54,19 @@ namespace N_Pokemon
 
 	void Pokemon::attack(Move selectedMove, Pokemon* targetPokemon) // method for pokemon to attack 
 	{
+		cout << getName() << " is attacking " << targetPokemon->getName() << " using " << selectedMove.name << "!" << endl;
+
+		if (targetPokemon == nullptr)
+		{
+			cout << "Error: target Pokemon is a nullptr!" << endl;
+			return;
+		}
+
+		cout << targetPokemon->getName() << "'s HP before attack " << targetPokemon->getHealth() << endl;
+		
 		targetPokemon->TakeDamage(selectedMove.power);
+
+		cout << targetPokemon->getName() << "'s HP after taking damage " << targetPokemon->getHealth() << endl;
 	}
 
 	void Pokemon::TakeDamage(int damage) // method for poekmon taking damage 

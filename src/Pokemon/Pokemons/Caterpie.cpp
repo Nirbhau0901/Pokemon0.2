@@ -16,28 +16,6 @@ namespace N_Pokemon
 			 Move("STICKY WEB",10)
 				}){}
 
-		/*void Caterpie::bugBite(Pokemon* targetPokemon)
-		{
-			cout << name << " Uses BUG BITE!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "The Bite hurts a lot." << endl;
-			Utility::waitForEnter();
-
-			targetPokemon->TakeDamage(attackPower);
-
-			if (targetPokemon->isFainted())
-				cout << targetPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}*/
-
-		/*int reduceAttackPower(int reduceDamage)
-		{
-
-		}*/
-
 		void Caterpie::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
 			Pokemon::attack(selectedMove, targetPokemon);

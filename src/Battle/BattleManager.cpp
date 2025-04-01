@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "../../header/Pokemon/Pokemon.h"
 #include "../../header/Character/Player/Player.h"
 #include "../../header/Battle/BattleManager.h"
@@ -27,6 +28,8 @@ namespace N_Battle
 	bool BattleManager::stopBattle()
 	{
 		battleState.battleOngoing = false;
+
+		return battleState.battleOngoing;
 	}
 
 	void BattleManager::battle()
@@ -39,7 +42,20 @@ namespace N_Battle
 			}
 			else
 			{
-				battleState.wildPokemon->attack(battleState.playerPokemon);
+				if (battleState.wildPokemon->moves.empty())
+				{
+					cout << "Error: Wild pokemon has no moves." << endl;
+					
+					return;
+				}
+				
+				//randomly selecting one of the pokemon's move
+				int moveIndex = rand() % battleState.wildPokemon->moves.size();
+				Move selectedMove = battleState.wildPokemon->moves[moveIndex];
+
+				//wild Pokemon attacks using the selected move
+				cout << "Wild " << battleState.wildPokemon->getName() << " used " << selectedMove.name << "!" << endl;
+				battleState.wildPokemon->attack(selectedMove, battleState.playerPokemon);
 			}
 
 			// updating battle state after the turn
