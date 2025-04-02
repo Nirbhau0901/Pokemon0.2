@@ -150,7 +150,7 @@
   <ItemGroup>
     <ClInclude Include="header\Battle\BattleManager.h" />
     <ClInclude Include="header\Battle\BattleState.h" />
-    <ClInclude Include="header\Pokemon\IStatusEffect.h" />
+    <ClInclude Include="header\Pokemon\StatusEffect\IStatusEffect.h" />
     <ClInclude Include="header\Pokemon\Move.h" />
     <ClInclude Include="header\Main\Game.h" />
     <ClInclude Include="header\Pokemon\grass.h" />
@@ -166,6 +166,7 @@
     <ClInclude Include="header\Pokemon\Pokemons\Zubat.h" />
     <ClInclude Include="header\Pokemon\PokemonType.h" />
     <ClInclude Include="header\Character\ProfessorOak.h" />
+    <ClInclude Include="header\Pokemon\StatusEffect\ParalyzedEffect.h" />
     <ClInclude Include="header\Utility\Utility.h" />
     <ClInclude Include="header\Battle\WildEncounterManager.h" />
   </ItemGroup>

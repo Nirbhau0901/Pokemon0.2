@@ -1,9 +1,9 @@
 #pragma once
-#include "../../header/Pokemon/Pokemon.h"
 #include <string>
 
 using namespace std;
-using namespace N_Pokemon;
+
+class Pokemon;
 
 class IStatusEffect
 {
