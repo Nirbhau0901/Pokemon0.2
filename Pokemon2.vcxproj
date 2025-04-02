@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="header\Battle\BattleManager.h" />
     <ClInclude Include="header\Battle\BattleState.h" />
+    <ClInclude Include="header\Pokemon\IStatusEffect.h" />
     <ClInclude Include="header\Pokemon\Move.h" />
     <ClInclude Include="header\Main\Game.h" />
     <ClInclude Include="header\Pokemon\grass.h" />

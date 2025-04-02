@@ -123,5 +123,8 @@
     <ClInclude Include="header\Pokemon\Move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\Pokemon\IStatusEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
