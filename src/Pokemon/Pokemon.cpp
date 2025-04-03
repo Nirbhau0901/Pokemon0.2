@@ -1,10 +1,10 @@
 //Pokemon.cpp
-
 #include "../../header/Pokemon/Pokemon.h"
 #include <iostream>
 #include "../../header/Pokemon/PokemonType.h"
 #include "../../header/Utility/Utility.h"
 #include "../../header/Pokemon/Move.h"
+#include "../../header/Pokemon/StatusEffect/ParalyzedEffect.h"
 
 using namespace std;
 using namespace N_Utility;
@@ -22,6 +22,7 @@ namespace N_Pokemon
 		health = 50;
 		maxHealth = 50;
 		attackPower = 10;
+		appliedEffect = nullptr;
 	}
 
 	//parameterized constructor
@@ -33,6 +34,7 @@ namespace N_Pokemon
 		maxHealth = p_health;
 		moves = p_moves;
 		attackPower = 10;
+		appliedEffect = nullptr;
 	}
 
 	//copy constructor
@@ -44,6 +46,7 @@ namespace N_Pokemon
 		maxHealth = other.maxHealth;
 		moves = other.moves;
 		attackPower = other.attackPower;
+		appliedEffect = other.appliedEffect;
 	}
 
 	//destructor
@@ -162,5 +165,37 @@ namespace N_Pokemon
 		attackPower = attackPower - reduceDamage;
 
 		return attackPower;
+	}
+
+	bool Pokemon::canAttack()
+	{
+		if (appliedEffect == nullptr)
+			return true;
+		else
+			return appliedEffect->endTurnEffect(this);
+	}
+
+	bool Pokemon::canApplyEffect()
+	{
+		return appliedEffect == nullptr;
+	}
+
+	void Pokemon::applyEffect(StatusEffectType effectToApply)
+	{
+		switch (effectToApply)
+		{
+			case
+				StatusEffectType::PARALYZED:
+				appliedEffect = new ParalyzedEffect();
+				appliedEffect->applyEffect(this);
+				break;
+			default:
+				appliedEffect = nullptr;
+		}
+	}
+
+	void Pokemon::clearEffect()
+	{
+		appliedEffect = nullptr;
 	}
 }

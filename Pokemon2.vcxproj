@@ -168,6 +168,7 @@
     <ClInclude Include="header\Pokemon\PokemonType.h" />
     <ClInclude Include="header\Character\ProfessorOak.h" />
     <ClInclude Include="header\Pokemon\StatusEffect\ParalyzedEffect.h" />
+    <ClInclude Include="header\Pokemon\StatusEffect\StatusEffectType.h" />
     <ClInclude Include="header\Utility\Utility.h" />
     <ClInclude Include="header\Battle\WildEncounterManager.h" />
   </ItemGroup>

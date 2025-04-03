@@ -1,10 +1,13 @@
 #pragma once
 #include "PokemonType.h"
+#include "../../header/Pokemon/StatusEffect/IStatusEffect.h"
+#include "../../header/Pokemon/StatusEffect/StatusEffectType.h"
 #include "Move.h"
 #include <string>
 #include <vector>
 
 using namespace std;
+using namespace N_Pokemon::N_StatusEffects;
 
 
 namespace N_Pokemon
@@ -58,5 +61,15 @@ namespace N_Pokemon
 		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
 
 		int reduceAttackPower(int reduceDamage);
+
+		IStatusEffect* appliedEffect;
+
+		bool canAttack();
+
+		void applyEffect(StatusEffectType effectToApply);
+
+		void clearEffect();
+
+		bool canApplyEffect();
 	};
 }

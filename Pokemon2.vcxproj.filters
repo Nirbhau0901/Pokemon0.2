@@ -132,5 +132,8 @@
     <ClInclude Include="header\Pokemon\StatusEffect\ParalyzedEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\Pokemon\StatusEffect\StatusEffectType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
