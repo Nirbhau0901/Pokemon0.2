@@ -140,6 +140,7 @@
     <ClCompile Include="src\Pokemon\Pokemons\Pikachu.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Squirtle.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Zubat.cpp" />
+    <ClCompile Include="src\Pokemon\StatusEffect\ParalyzedEffect.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Battle\WildEncounterManager.cpp" />
   </ItemGroup>
