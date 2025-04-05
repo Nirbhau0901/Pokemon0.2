@@ -46,30 +46,30 @@ namespace N_Pokemon
 
 		void heal(); // method to heal pokemon
 
-		string getName();
+		string getName(); // method to get pokemon name
 
-		int getHealth();
+		int getHealth(); // method to get pokemon health
 
-		vector<Move>moves;
+		vector<Move>moves; // vetor storing the move list
 
-		void showAvailableMoves();
+		void showAvailableMoves(); // method to show available moves
 
-		int selectMove();
+		int selectMove(); // method to select move
 
-		void useMove(Move selectedMove, Pokemon* target);
+		void useMove(Move selectedMove, Pokemon* targetPokemon); // method for using move
 
 		void selectAndUseMove(Pokemon* targetPoekemon); //method for selecting and using a move
 
-		int reduceAttackPower(int reduceDamage);
+		int reduceAttackPower(int reduceDamage); // method for reducing damage
 
-		IStatusEffect* appliedEffect;
+		IStatusEffect* appliedEffect; // pointer for applied status effect
 
-		bool canAttack();
+		bool canAttack(); // method to check if pokemon can attack
 
-		void applyEffect(StatusEffectType effectToApply);
+		void applyEffect(StatusEffectType effectToApply); // method to apply status effect
 
-		void clearEffect();
+		void clearEffect(); // method to clear status effect
 
-		bool canApplyEffect();
+		bool canApplyEffect(); // method to check if new status effect can be applied to the pokemon
 	};
 }

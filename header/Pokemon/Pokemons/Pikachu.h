@@ -13,9 +13,6 @@ namespace N_Pokemon
 			Pikachu();
 
 			void attack(Move slectedMove, Pokemon* wildPokemon);
-
-		/*private:
-			void thunderShock(Pokemon* wildPokemon);*/
 		};
 	}
 }

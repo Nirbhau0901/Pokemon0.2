@@ -2,8 +2,6 @@
 // battle state.hpp
 #include "../../header/Pokemon/Pokemon.h"
 
-//using namespace N_Pokemon;
-
 namespace N_Battle
 {
 	struct BattleState

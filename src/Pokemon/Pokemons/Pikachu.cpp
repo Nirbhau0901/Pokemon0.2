@@ -19,23 +19,6 @@ namespace N_Pokemon
 			Move("THUNDER BOLT",80)
 				}) {}
 
-		/*void Pikachu::thunderShock(Pokemon* targetPokemon)
-		{
-			cout << name << " Uses THUNDER SHOCK!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "The Electricity shocks everything it touches." << endl;
-			Utility::waitForEnter();
-
-			targetPokemon->TakeDamage(attackPower);
-
-			if (targetPokemon->isFainted())
-				cout << targetPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}*/
-
 		void Pikachu::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
 			if (selectedMove.name == "THUNDER BOLT")

@@ -13,8 +13,6 @@ namespace N_Pokemon
 			Pidgey();
 
 			void attack(Move selectedMove, Pokemon* targetPokemon);
-		/*private:
-			void wingAttack(Pokemon* targetPokemon);*/
 		};
 	}
 }

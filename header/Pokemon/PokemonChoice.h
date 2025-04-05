@@ -1,4 +1,5 @@
 // defining an enum class for Pokemon choice
+#pragma once
 
 namespace N_Pokemon
 {

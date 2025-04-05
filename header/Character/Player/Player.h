@@ -1,13 +1,9 @@
 //Player.h
 #pragma once 
-
 #include <string>
 #include "../../../header/Pokemon/Pokemon.h"
 
 using namespace std;
-
-
-//class Pokemon;
 
 namespace N_Player
 {

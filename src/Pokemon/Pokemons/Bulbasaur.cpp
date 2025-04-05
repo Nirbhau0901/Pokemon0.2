@@ -14,24 +14,7 @@ namespace N_Pokemon
 			:Pokemon("Bulbasaur", PokemonType::GRASS, 110, {
 			 Move ("VINE WHIP",25),
 			 Move ("TACKLE",10)
-				}){}
-
-		/*void Bulbasaur::vineWhip(Pokemon* wildPokemon)
-		{
-			cout << name << " Uses VINE WHIP!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "The Vines strike the enemy." << endl;
-			Utility::waitForEnter();
-
-			wildPokemon->TakeDamage(attackPower);
-
-			if (wildPokemon->isFainted())
-				cout << wildPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}*/
+				}){} 
 
 		void Bulbasaur::attack(Move selectedMove, Pokemon* targetPokemon) //overriding attack method 
 		{

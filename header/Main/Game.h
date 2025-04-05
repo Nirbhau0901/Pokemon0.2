@@ -4,6 +4,7 @@
 
 class Player;
 using namespace N_Pokemon;
+using namespace N_Player;
 
 
 namespace N_Main
@@ -22,6 +23,6 @@ namespace N_Main
 		Game();
 		~Game();
 		void gameLoop(N_Player::Player* player);
-		/*void visitPokeCenter(N_Player::Player* player);*/
+		
 	};
 }

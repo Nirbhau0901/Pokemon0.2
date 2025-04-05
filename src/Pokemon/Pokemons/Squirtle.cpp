@@ -16,23 +16,6 @@ namespace N_Pokemon
 			Move("RAPID SPIN",5)
 				}) {}
 
-		/*void Squirtle::waterSplash(Pokemon* wildPokemon)
-		{
-			cout << name << " Uses WATER SPLASH!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "the intense splash can break rocks." << endl;
-			Utility::waitForEnter();
-
-			wildPokemon->TakeDamage(attackPower);
-
-			if (wildPokemon->isFainted())
-				cout << wildPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << wildPokemon->getName() << " has " << wildPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}*/
-
 		void Squirtle::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
 			Pokemon::attack(selectedMove, targetPokemon);

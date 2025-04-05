@@ -16,23 +16,6 @@ namespace N_Pokemon
 			Move("LEECH LIFE",10)
 				}) {}
 
-		/*void Zubat::supersonic(Pokemon* targetPokemon)
-		{
-			cout << name << " Uses SUPERSONIC!!" << endl;
-			Utility::waitForEnter();
-
-			cout << "The Sonic waves makes the ears ring..." << endl;
-			Utility::waitForEnter();
-
-			targetPokemon->TakeDamage(attackPower);
-
-			if (targetPokemon->isFainted())
-				cout << targetPokemon->getName() << " has fainted!" << endl;
-			else
-				cout << targetPokemon->getName() << " has " << targetPokemon->getHealth() << " HP left." << endl;
-			Utility::waitForEnter();
-		}*/
-
 		void Zubat::attack(Move selectedMove, Pokemon* targetPokemon)
 		{
 			Pokemon::attack(selectedMove, targetPokemon);

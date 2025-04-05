@@ -122,7 +122,7 @@ namespace N_Pokemon
 
 		for (size_t i = 0; i < moves.size(); ++i)
 		{
-			cout << i + 1 << ": " << moves[i].name << "Power: " << moves[i].power << endl;
+			cout << i + 1 << ": " << moves[i].name << " Power: " << moves[i].power << endl;
 		}
 	}
 
