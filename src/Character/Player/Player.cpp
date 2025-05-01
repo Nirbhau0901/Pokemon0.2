@@ -48,7 +48,7 @@ namespace N_Player
             break;
         }
 
-        cout << "Player " << name << " chose " << chosenPokemon.name << " !" << endl;
+        cout << "Player " << name << " chose " << chosenPokemon.getName() << " !" << endl;
         Utility::waitForEnter(); // wait for user to press enter
     }
 }

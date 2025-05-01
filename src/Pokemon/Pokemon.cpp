@@ -12,13 +12,34 @@ namespace N_Pokemon
 	int Pokemon::maxHealth = 100;
 
 	//default constructor
-	Pokemon::Pokemon() : name("Unknown"), type(PokemonType::NORMAL), health(50), attackPower(15) {}
+	Pokemon::Pokemon()
+	{
+		name = "Unknown";
+		type = PokemonType::NORMAL;
+		health = 50;
+		maxHealth = 50;
+		attackPower = 10;
+	}
 
 	//parameterized constructor
-	Pokemon::Pokemon(std::string p_name, PokemonType p_type, int p_maxHealth, int p_attackPower) : name(p_name), type(p_type), health(p_maxHealth), attackPower(p_attackPower) {}
+	Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower)
+	{
+		name = p_name;
+		type = p_type;
+		health = p_health;
+		maxHealth = p_health;
+		attackPower = p_attackPower;
+	}
 
 	//copy constructor
-	Pokemon::Pokemon(const Pokemon& other) : name(other.name), type(other.type), health(other.health), attackPower(other.attackPower) {}
+	Pokemon::Pokemon(const Pokemon& other)
+	{
+		name = other.name;
+		type = other.type;
+		health = other.health;
+		maxHealth = other.maxHealth;
+		attackPower = other.attackPower;
+	}
 
 	//destructor
 	Pokemon::~Pokemon()
@@ -51,5 +72,10 @@ namespace N_Pokemon
 	void Pokemon::heal() // method to heal pokemon
 	{
 		health = maxHealth; // set health to max health 
+	}
+
+	string Pokemon::getName()
+	{
+		return name;
 	}
 }

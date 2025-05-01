@@ -9,12 +9,16 @@ namespace N_Pokemon
 {
 	class Pokemon
 	{
-	public:
+
+	protected:
 		string name;
 		PokemonType type;
 		int health;
 		static int maxHealth;
 		int attackPower;
+
+	public:
+		
 
 		//default constructor
 		Pokemon();
@@ -35,5 +39,7 @@ namespace N_Pokemon
 		bool isFainted() const; // method to check if pokemon has fainted 
 
 		void heal(); // method to heal pokemon
+
+		string getName();
 	};
 }
