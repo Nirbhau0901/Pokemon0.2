@@ -13,11 +13,6 @@ namespace N_Pokemon
 			Caterpie();
 
 			void attack(Move selectedMove, Pokemon* targetPokemon);
-
-			int reduceAttackPower(int reduceDamage);
-
-		/*private:
-			void bugBite(Pokemon* targetPokemon);*/
 		};
 	}
 }

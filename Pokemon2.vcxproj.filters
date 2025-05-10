@@ -60,6 +60,9 @@
     <ClCompile Include="src\Pokemon\Pokemons\Bulbasaur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Pokemon\StatusEffect\ParalyzedEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
@@ -121,6 +124,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\Pokemon\Move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Pokemon\StatusEffect\IStatusEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Pokemon\StatusEffect\ParalyzedEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Pokemon\StatusEffect\StatusEffectType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

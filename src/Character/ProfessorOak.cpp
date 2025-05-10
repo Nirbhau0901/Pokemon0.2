@@ -63,10 +63,6 @@ namespace N_Character
         Utility::waitForEnter();
         cout << "Professor Oak: Your mission, should you choose to accept it-and trust me, you really don't have a choice-is to collect all the Pokemon Badges and conqure the Pokemon League" << endl;
         Utility::waitForEnter();
-        cout << "\n" << player.name << ": That sounds like every other Pokemon game out there..." << endl;
-        Utility::waitForEnter();
-        cout << "Professor Oak: SHHHHHHHH! Don't break the fourth wall, " << player.name << "! This is serious buisness!" << endl;
-        Utility::waitForEnter();
         cout << "Professor Oak: To achieve this, you'll need to battle wild Pokemon, challenge gym leaders, and of course, keep your Pokemon healthy at the PokeCenter." << endl;
         Utility::waitForEnter();
         cout << "Professor Oak: Along the way, you'll capture new Pokeon to strengthen your team. Just remember--there is a limit to how many Pokemon you can carry, so choose wisely!" << endl;

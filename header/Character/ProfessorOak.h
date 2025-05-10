@@ -3,9 +3,6 @@
 #include "../../header/Character/Player/Player.h"
 
 using namespace std;
-//using namespace N_Player;
-
-//class Player;
 
 namespace N_Character
 {

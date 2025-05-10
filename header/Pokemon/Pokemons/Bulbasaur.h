@@ -13,9 +13,6 @@ namespace N_Pokemon
 			Bulbasaur();
 
 			void attack(Move selectedMove, Pokemon* targetPokemon);
-
-		/*private:
-			void vineWhip(Pokemon* targetPokemon);*/
 		};
 	}
 }

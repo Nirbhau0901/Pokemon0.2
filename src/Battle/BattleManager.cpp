@@ -25,7 +25,7 @@ namespace N_Battle
 		battle(); // calling method for actual battle 
 	}
 
-	bool BattleManager::stopBattle()
+	bool BattleManager::stopBattle() // method to stop the battle.
 	{
 		battleState.battleOngoing = false;
 
@@ -38,24 +38,26 @@ namespace N_Battle
 		{
 			if (battleState.playerTurn)
 			{
-				battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
+				battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);  // player attacking wild pokemon using the selected move
 			}
 			else
 			{
-				if (battleState.wildPokemon->moves.empty())
+				if (battleState.wildPokemon->moves.empty()) // checking if the wild pokemon's move list is empty
 				{
-					cout << "Error: Wild pokemon has no moves." << endl;
-					
-					return;
+							cout << "Error: Wild pokemon has no moves." << endl;
+							
+							return;
 				}
-				
-				//randomly selecting one of the pokemon's move
-				int moveIndex = rand() % battleState.wildPokemon->moves.size();
-				Move selectedMove = battleState.wildPokemon->moves[moveIndex];
+				else // wild pokemon attacking playerpokemon by randomly selecting a move from its available move list
+				{
+					//randomly selecting one of the pokemon's move
+					int moveIndex = rand() % battleState.wildPokemon->moves.size();
+					Move selectedMove = battleState.wildPokemon->moves[moveIndex];
 
-				//wild Pokemon attacks using the selected move
-				cout << "Wild " << battleState.wildPokemon->getName() << " used " << selectedMove.name << "!" << endl;
-				battleState.wildPokemon->attack(selectedMove, battleState.playerPokemon);
+					//wild Pokemon attacks using the selected move
+					cout << "Wild " << battleState.wildPokemon->getName() << " used " << selectedMove.name << "!" << endl;
+					battleState.wildPokemon->attack(selectedMove, battleState.playerPokemon);
+				}
 			}
 
 			// updating battle state after the turn

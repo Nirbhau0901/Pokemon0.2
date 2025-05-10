@@ -13,9 +13,6 @@ namespace N_Pokemon
 			Squirtle();
 
 			void attack(Move selectedMove, Pokemon* wildPokemon);
-
-		/*private:
-			void waterSplash(Pokemon* wildPokemon);*/
 		};
 	}
 }

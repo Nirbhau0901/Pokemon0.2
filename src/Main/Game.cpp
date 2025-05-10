@@ -45,7 +45,7 @@ namespace N_Main
 
             // Display options to the player
 
-            cout << "What would you like to do next, " << player->name << "?" << endl;
+            cout << "What would you like to do next, " << player->name << " ?" << endl;
             cout << "1. Battle wild Pokemon." << endl;
             cout << "2. Visit PokeCenter." << endl;
             cout << "3. Challenge Gyms." << endl;
@@ -111,8 +111,6 @@ namespace N_Main
             Utility::waitForEnter();
 
             cout << "Goodbye " << player->name << "! Thanks for playing!" << endl;
-
-
         }
     }
 

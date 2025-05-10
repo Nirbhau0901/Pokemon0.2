@@ -8,16 +8,10 @@
 
 using namespace std;
 using namespace N_Main;
-//using namespace N_Player;
 using namespace N_Character;
-//using namespace N_Pokemon;
 
 int main()
 {
-    // create Pokemon for the game
-   // N_Pokemon::Pokemon* pokemon = new charmander("Charmander", N_Pokemon::PokemonType::FIRE, 100, 15); //using parameterized consructor 
-
-
     // initialize Professor Oak and player with default placeholder values
 
     ProfessorOak* professor = new ProfessorOak("Professor Oak");
